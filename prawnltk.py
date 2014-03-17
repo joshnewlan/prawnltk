@@ -1,7 +1,6 @@
 import praw
 import operator
 import nltk
-from pprint import pprint
 
 r = praw.Reddit('NLTK comment parser /u/USERNAME')
 r.login('USERNAME', 'PASSWORD')
