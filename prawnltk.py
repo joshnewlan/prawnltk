@@ -39,7 +39,9 @@ stop_words = nltk.corpus.stopwords.words('english') + [
     '[',
     '&',
     ';',
-    '\'m'
+    '\'m',
+    '=',
+    "\'ll"
     ]
 
 for submission in subreddit.get_hot(limit=2):
