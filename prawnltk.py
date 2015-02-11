@@ -11,38 +11,9 @@ subreddit = r.get_subreddit('askreddit')
 #nltk.download('words')
 #nltk.download('stopwords')
 
-stop_words = nltk.corpus.stopwords.words('english') + [
-    '.',
-    ',',
-    '--',
-    '\'s',
-    '?',
-    ')',
-    '(',
-    ':',
-    '\'',
-    '\'re',
-    '"',
-    '-',
-    '}',
-    '{',
-    u'—',
-    '!',
-    '...',
-    '\'\'',
-    '\'ve',
-    'n\'t',
-    '%',
-    '``',
-    '#',
-    ']',
-    '[',
-    '&',
-    ';',
-    '\'m',
-    '=',
-    "\'ll"
-    ]
+stop_word_list = """.,--,\'s,?,),(,:,\',\'re,",-,},{,!,...,\'\',\'ve,n\'t,%,``,#,],[,&,;,\'m,=,\'ll""".split(',')
+stop_word_list = stop_word_list.extend([u'—', ','])
+stop_words = nltk.corpus.stopwords.words('english') + stop_word_list
 
 for submission in subreddit.get_hot(limit=2):
     print submission.title
